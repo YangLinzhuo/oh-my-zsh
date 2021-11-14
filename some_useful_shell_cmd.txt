@@ -1,0 +1,21 @@
+ripgrep # fast search command, replace grep
+tldr    # simple command tutorial. tl;dr (too long, don't read)
+cppman  # cpp documentation
+oh-my-zsh   # zsh shell configuration manager
+scc     # fast calulation command for code
+cheat   # show cheatsheets for some command
+
+
+# Go install setting
+# go get -u http_url need to change to go install http_url@latest
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+# Need to set alias for command installed by go
+
+
+icdiff  # diff file with splitting screen
+
+# replace original git diff tool
+git config --global diff.tool icdiff
+git config --global difftool.prompt false
+git config --global alias.icdiff difftool
