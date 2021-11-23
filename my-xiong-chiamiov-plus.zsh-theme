@@ -11,24 +11,24 @@ python_version_prompt_info() {
     if [ -n "$CONDA_DEFAULT_ENV" ]; then
       CONDA_DEFAULT_ENV_NAME="$CONDA_DEFAULT_ENV::"
     fi
-    echo -n " - %{$fg[yellow]%}(${CONDA_DEFAULT_ENV_NAME}${PYTHON_VERSION})%{$reset_color%}"
+    echo -n " - %{$FG[069]%}(${CONDA_DEFAULT_ENV_NAME}${PYTHON_VERSION})%{$reset_color%}"
   fi
 }
 
-local time_info=' - %{$fg_bold[blue]%}[%{$reset_color%}%{$fg_bold[yellow]%}%D{%a %b %d, %H:%M:%S}%{$reset_color%}%{$fg_bold[blue]%}]%{$reset_color%}'
-local user_info='%{$fg_bold[blue]%}[%{$reset_color%}%{$fg_bold[green]%}%n%{$reset_color%}%{$fg_bold[grey]%}@%{$reset_color%}%{$fg_bold[blue]%}%M%{$reset_color%}%{$fg[blue]%}]%{$reset_color%}'
-local dir_info=' - %{$fg_bold[blue]%}[%{$reset_color%}%{$fg_bold[cyan]%}%~%{$reset_color%}%{$fg_bold[blue]%}]%{$reset_color%}'
+local time_info=' - %{$fg[blue]%}[%{$reset_color%}%{$FG[226]%}%D{%a %b %d, %H:%M:%S}%{$reset_color%}%{$fg[blue]%}]%{$reset_color%}'
+local user_info='%{$fg[blue]%}[%{$reset_color%}%{$FG[154]%}%n%{$reset_color%}%{$fg[magenta]%}@%{$reset_color%}%{$fg[blue]%}%M%{$reset_color%}%{$fg[blue]%}]%{$reset_color%}'
+local dir_info=' - %{$fg[blue]%}[%{$reset_color%}%{$FG[051]%}%~%{$reset_color%}%{$fg[blue]%}]%{$reset_color%}'
 
-PROMPT=$'%{$fg_bold[blue]%}┌─%{$reset_color%}'\
+PROMPT=$'%{$fg[blue]%}┌─%{$reset_color%}'\
 ${user_info}\
 ${dir_info}\
-' - %{$fg_bold[blue]%}<%{$reset_color%}$(git_prompt_info)%{$fg_bold[blue]%}>%{$reset_color%}'\
+' - %{$fg[blue]%}<%{$reset_color%}$(git_prompt_info)%{$fg[blue]%}>%{$reset_color%}'\
 ${python_version_info}\
 ${time_info}
 
-PROMPT+=$'\n%{$fg_bold[blue]%}└─[%(?:%{$fg_bold[green]%}$:%{$fg_bold[red]%}$)%{$fg_bold[blue]%}]%{$reset_color%} '
-PS2=$' %{$fg_bold[blue]%}>%{$reset_color%} '
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+PROMPT+=$'\n%{$fg[blue]%}└─[%(?:$FG[118]$:%{$fg[red]%}$)%{$fg[blue]%}]%{$reset_color%} '
+PS2=$' %{$fg[blue]%}>%{$reset_color%} '
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$reset_color%}%{$fg_bold[blue]%})"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$reset_color%}%{$fg[blue]%})"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
