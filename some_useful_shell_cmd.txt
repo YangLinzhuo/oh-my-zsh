@@ -19,3 +19,9 @@ icdiff  # diff file with splitting screen
 git config --global diff.tool icdiff
 git config --global difftool.prompt false
 git config --global alias.icdiff difftool
+
+
+# Set wsl proxy
+export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
+export https_proxy="http://${hostip}:7890"
+export http_proxy="http://${hostip}:7890"
